@@ -1,0 +1,134 @@
+/*Tabbel 13*/
+
+
+<h1>Tabel 13</h1>
+		
+		<table border="1">
+		<tr>
+			<td colspan="10"> Print Report</td>
+		</tr>
+		
+		<tr align="right">
+			<td>SI. No &nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td>Column1</td>
+			<td>Column2</td>
+			<td>100</td>
+			<td>500</td>
+			<td>200</td>
+			<td>600</td>
+			<td>300</td>
+			<td>400</td>
+			<td>Total</td>
+			
+		</tr>
+		
+		<tr align="right">
+			<td>1</td>
+			<td rowspan="3" align="Center">A</td>
+			<td align="left">bar</td>
+			<td>0</td>
+			<td>0</td>
+			<td>1</td>
+			<td>0</td>
+			<td>1</td>
+			<td>0</td>
+			<td>2</td>
+		</tr>
+		
+		<tr align="right">
+			<td>2</td>
+			<td align="left">baz</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>1</td>
+			<td>0</td>
+			<td>1</td>
+		</tr>
+		
+		<tr align="right">
+			<td>3</td>
+			<td align="left">foo</td>
+			<td>3</td>
+			<td>0</td>
+			<td>1</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>4</td>
+		</tr>
+		
+		<tr align="right">
+			<td colspan="3">A Total</td>
+			<td>3</td>
+			<td>0</td>
+			<td>2</td>
+			<td>0</td>
+			<td>2</td>
+			<td>0</td>
+			<td>7</td>
+			
+		</tr>
+		
+		<tr align="right">
+			<td>4</td>
+			<td rowspan="3" align="Center">B</td>
+			<td align="left">baz</td>
+			<td>0</td>
+			<td>0</td>
+			<td>1</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>1</td>
+		</tr>
+		
+		<tr align="right">
+			<td>5</td>
+			<td align="left">baz</td>
+			<td>1</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>1</td>
+			<td>1</td>
+			<td>3</td>
+		</tr>
+		
+		<tr align="right">
+			<td>6</td>
+			<td align="left">baz</td>
+			<td>1</td>
+			<td>0</td>
+			<td>1</td>
+			<td>0</td>
+			<td>1</td>
+			<td>2</td>
+			<td>5</td>
+		</tr>
+		
+		<tr align="right">
+			<td colspan="3" align="right">B Total</td>
+			<td>2</td>
+			<td>0</td>
+			<td>2</td>
+			<td>0</td>
+			<td>2</td>
+			<td>3</td>
+			<td>9</td>
+		</tr>
+		
+		<tr align="right">
+			<td colspan="3" align="left">Grand Total:</td>
+			<td>5</td>
+			<td>0</td>
+			<td>4</td>
+			<td>0</td>
+			<td>4</td>
+			<td>3</td>
+			<td>16</td>
+			
+		</tr>
+		
+		</table>
