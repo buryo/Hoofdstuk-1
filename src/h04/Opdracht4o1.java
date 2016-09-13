@@ -48,6 +48,7 @@ public class Opdracht4o1 extends Applet {
 
         /*staafdiagram*/
 
+
         g.drawLine(90, 400, 90, 600);   /*Verticaal lijn*/
         g.drawString("KG", 84, 389 );   /*KG line*/
         g.drawLine(90, 600, 290, 600);   /*horizontaal lijn*/
