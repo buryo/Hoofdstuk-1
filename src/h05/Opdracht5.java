@@ -7,6 +7,8 @@ import java.applet.Applet;
  */
 public class Opdracht5 extends Applet{
 
+    //onzin
+
 
 
 
