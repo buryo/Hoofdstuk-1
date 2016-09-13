@@ -1,4 +1,4 @@
-package h01;
+package h04;
 
 
 import java.awt.*;
@@ -52,7 +52,6 @@ public class Praktijkopdracht extends Applet {
 
         g.drawArc(535,180,100,100,360,360);
         g.drawString("Cirkel", 570, 299);
-
 
     }
     }

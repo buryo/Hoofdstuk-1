@@ -1,8 +1,7 @@
-package h01;
+package h02;
 
 import java.applet.Applet;
 import java.awt.*;
-
 
 
 public class Opdracht2o1 extends Applet {
@@ -15,7 +14,7 @@ public class Opdracht2o1 extends Applet {
     public void paint(Graphics g) {
 
         g.setColor(Color.yellow);
-        g.drawString("Welcome to Java!!", 50, 60 );
+        g.drawString("Welcome to Java!!", 50, 60);
     }
 
 }
