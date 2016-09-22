@@ -16,7 +16,7 @@ public class Opdracht8o1 extends Applet {
     Button knopReset;
 
     public void init() {
-        knopOk = new Button();
+        knopOk = new Button("");
         knopOk.setLabel("Ok");
         knopOk.addActionListener(new TekstvakListener());
 
