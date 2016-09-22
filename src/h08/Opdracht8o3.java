@@ -9,21 +9,21 @@ import java.awt.geom.Arc2D;
 /**
  * Created by Burak Sen on 21-9-2016.
  */
-public class Opdracht8o3 extends Applet{
+public class Opdracht8o3 extends Applet {
     TextField tekstVak;
     Button knop;
     Label label;
     double uitkomst;
 
 
-    public void init(){
+    public void init() {
         knop = new Button("");
         knop.setLabel("Ok");
         knop.addActionListener(new KnopListener());
 
         tekstVak = new TextField("", 30);
         label = new Label("Type hierin het bedrag");
-        tekstVak.addActionListener( new KnopListener());
+        tekstVak.addActionListener(new KnopListener());
         add(label);
         add(tekstVak);
         add(knop);
@@ -33,22 +33,23 @@ public class Opdracht8o3 extends Applet{
 
     public void paint(Graphics g) {
 
-        g.drawString( "€" + uitkomst, 70, 80);
+        g.drawString("€" + uitkomst, 70, 80);
     }
 
 
-    class KnopListener implements ActionListener{
+    class KnopListener implements ActionListener {
 
 
         @Override
         public void actionPerformed(ActionEvent e) {
             String s = tekstVak.getText();
-            uitkomst = Double.parseDouble( s );
+            uitkomst = Double.parseDouble(s);
             uitkomst = (uitkomst / 100) * 21 + uitkomst;
             repaint();
             tekstVak.setText("Het bedrag is uitgerekend inclusief BTW");
 
         }
     }
+
 
 }
