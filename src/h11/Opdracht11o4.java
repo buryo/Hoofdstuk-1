@@ -13,10 +13,10 @@ public class Opdracht11o4 extends Applet {
     }
 
     public void paint(Graphics g) {
-        int teller = 0, drie=3, uitslag=0;
+        int teller = 1, drie=3, uitslag=0;
         int x = 0;
 
-        while(teller < 11) {
+        while(teller < 13) {
             x += 60;
             uitslag = drie * teller;
             g.drawString( drie + "x"+ teller + " = " + uitslag, x, 45 );
