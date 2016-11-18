@@ -25,7 +25,7 @@ public class PraktijkOpdracht extends Applet {
         //Boomstam kleur (bruin)
 
 
-        for (int j = 0; j < 2; j++) {
+        for (int j = 1; j < 4; j++) {
 
             for (int i = 0; i < 5; i++) {
 
@@ -33,9 +33,13 @@ public class PraktijkOpdracht extends Applet {
 
                 x += 100;
             }
+            // elke keer gaat de y 100 pixels omlaag
             y += 100;
-            x = 250 + 50;
+
+            // hier zet ik de x terug op zijn plek en daarna krijgt het 50 pixels erbij zodat het opschuift
+            x = 250 + 50 * j;
         }
+
     }
 
     void tekenBoom(Graphics g, int x, int y) {
