@@ -1,0 +1,126 @@
+package toetsJava2;
+
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.net.URL;
+import java.util.Random;
+
+/**
+ * Created by Burak Sen on 16-12-2016.
+ */
+public class FruitAutomaat extends Applet {
+    String[] image_files = {"fruit0.jpg", "fuit1.jpg", "fruit2.jpg", "fruit3.jpg", "fruit4.jpg", "fruit5.jpg", "fruit6.jpg", "fruit7.jpg", "fruit8.jpg", "fruit9.jpg", "fruit10.jpg", "fruit11.jpg", "fruit12.jpg", "fruit13.jpg", "fruit14.jpg", "fruit15.jpg", "fruit16.jpg", "fruit17.jpg", "fruit18.jpg", "fruit19.jpg"};
+    Image[] fotos;
+    private URL pad;
+    int x, y, krediet, gewonnenPunten;
+    Button knop, koopKrediet;
+    String text, kredietText;
+    Boolean activator;
+    AudioClip sound, victory4, victory20;
+
+    public void init() {
+        setSize(700, 600);
+
+//        Vaste text
+        text = "Gewonnen: ";
+        kredietText = "Krediet: ";
+
+//        knoppen
+        knop = new Button("Speel");
+        knop.addActionListener(new KnopListener());
+        add(knop);
+
+        koopKrediet = new Button("Koop 10 kredietpunten");
+        koopKrediet.addActionListener(new KoopKredietListener());
+        add(koopKrediet);
+
+// hier zet ik ze in de array
+        fotos = new Image[3];
+        pad = FruitAutomaat.class.getResource("/resources/");
+
+//        sounds
+        victory4 = getAudioClip(pad, "victory4.wav");
+        victory20 = getAudioClip(pad, "victory20.wav");
+        sound = getAudioClip(pad, "cassino.wav");
+
+// array einde
+        x = 60;
+        y = 150;
+        krediet = 10;
+        gewonnenPunten = 0;
+    }
+
+    public void paint(Graphics g) {
+//        zet 3 foto's op scherm
+        for (int i = 0; i < fotos.length; i++) {
+            g.drawImage(fotos[i], x + 100 * i, y, 100, 200, this);
+        }
+// vaste text op scherm
+        g.drawString(text + gewonnenPunten, 50, 70);
+        g.drawString(kredietText + krediet, 50, 50);
+    }
+
+    class KnopListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+
+            gewonnenPunten = 0;
+// boolean voor als je krediets op zijn
+            if (krediet == 0) {
+                activator = false;
+            }
+
+            if (krediet > 0) {
+                activator = true;
+            }
+// hier voer ik alles uit
+            if (activator == true) {
+                for (int i = 0; i < fotos.length; i++) {
+                    int random1 = new Random().nextInt(image_files.length);
+                    if (random1 == 1){
+                        random1 ++;
+                    }
+                    fotos[i] = getImage(pad, image_files[random1]);
+                }
+                if (fotos[0] == fotos[1]) {
+                    krediet += 4;
+                    gewonnenPunten = 4;
+                    victory4.play();
+                }
+                if (fotos[1] == fotos[2]) {
+                    krediet += 4;
+                    gewonnenPunten = 4;
+                    victory4.play();
+                }
+                if (fotos[0] == fotos[1] && fotos[1] == fotos[2]) {
+                    krediet += 20;
+                    gewonnenPunten = 20;
+                    victory20.play();
+                } else {
+                    krediet -= 1;
+                }
+            }
+            if (krediet == 0){
+                knop.setEnabled(false);
+                koopKrediet.setEnabled(true);
+            }
+            sound.play();
+            repaint();
+        }
+    }
+
+    class KoopKredietListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            if (krediet == 0) {
+                krediet += 10;
+            }
+            if(krediet == 10){
+                knop.setEnabled(true);
+                koopKrediet.setEnabled(false);
+            }
+            repaint();
+        }
+    }
+}
